@@ -1,14 +1,14 @@
-// 키의 최소값을 구하는 프로그램을 작성하세요.
+// 키의 합계를 구하는 프로그램을 작성하세요
 #include <stdio.h>
 #include <stdlib.h>
 
-/*--- 요소 개수가 n인 배열 a의 요소의 최소값 ---*/
-int minof(const int a[], int n)
+/*--- 요소 개수가 n인 배열 a의 요소의 합 ---*/
+int sumof(const int a[], int n)
 {
-    int min = a[0];             // 최소값
+    int sum = a[0];             // 합
     for (int i = 1; i < n; i++)
-        if (a[i] < min) min = a[i];
-    return min;
+        sum += a[i]; 
+    return sum;
 }
 
 int main(void)
@@ -22,7 +22,7 @@ int main(void)
         printf("height[%d] : ", i);
         scanf("%d", &height[i]);
     }
-    printf("최소값은 %d입니다.\n", minof(height, number));
+    printf("키의 합은 %d입니다.\n",  sumof(height, number));
     free(height);                               // 배열 height를 해제
 
     return 0;
