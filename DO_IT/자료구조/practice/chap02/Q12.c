@@ -1,4 +1,4 @@
-// 한 해의 지난 날 수를 구하여 출력
+// 날짜를 나타내는 구조체
 #include <stdio.h>
 
 typedef struct {
@@ -21,12 +21,19 @@ int isleap(int year)
 
 /*--- y년 m월 d일을 나타내는 구조체를 반환하는 함수 ---*/
 Date DateOf(int y, int m, int d){
-    printf("%d년 %d월 %d일\n",y,m,d);
+    
+    Date temp;
+
+    temp.y = y;
+    temp.m = m;
+    temp.d = d;
+    
+    return temp;
 }
 
 /*--- 날짜 x의 n일 뒤의 날짜를 반환하는 함수---*/
 Date After(Date x, int n){
-
+    
     
 }
 
@@ -38,16 +45,22 @@ Date Before(Date x, int n){
 }
 
 int main(void)
-{
-    Date x[] = {};
-    //int year, month, day;       // 년, 월, 일
-    printf("년: ");   scanf("%d", &x.y);
-    printf("월: ");   scanf("%d", &x.m);
-    printf("일: ");   scanf("%d", &x.d);
-    //
-    DateOf(x.y, x.m, x.d);
-    //
-    //
+{   
+    puts("날짜를 입력하세요.");
+    int year=0, month=0, day=0;       // 년, 월, 일
+    int number; // 날짜
+    printf("년: ");   scanf("%d", &year);
+    printf("월: ");   scanf("%d", &month);
+    printf("일: ");   scanf("%d", &day);
+    
+    Date x = DateOf(year,month,day);
+    
+    puts("현재 날짜로 부터 n일 전의 날짜와 n일 후의 날짜를 알려드립니다.");
+    printf("현재 날짜 : %d년 %d월 %d일\n",x.y,x.m,x.d);
+    printf("n을 입력하세요 : ");
+    scanf("%d",&number);
+
+    
 
 
     return 0;
